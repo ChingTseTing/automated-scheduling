@@ -1,9 +1,10 @@
 from selenium import webdriver
 
+from webdriver_manager.chrome import ChromeDriverManager # <--- add this
 
 
 #driverpath = "./chromedriver.exe"
-browser = webdriver.Chrome(executable_path=r'./chromedriver')
+browser = webdriver.Chrome(ChromeDriverManager().install())
 # browser = webdriver.Chrome('./chromedriver')
 
 
