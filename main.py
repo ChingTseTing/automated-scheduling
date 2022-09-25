@@ -4,7 +4,7 @@ from selenium import webdriver
 
 
 #driverpath = "./chromedriver.exe"
-browser = webdriver.Chrome("./geckodriver.exe")
+browser = webdriver.Chrome("D:\driver\chromedriver_win32\chromedriver")
 # browser = webdriver.Chrome('./chromedriver')
 
 
