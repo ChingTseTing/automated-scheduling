@@ -4,8 +4,8 @@ from selenium import webdriver
 
 
 #driverpath = "./chromedriver.exe"
-browser = webdriver.Chrome("D:\driver\chromedriver_win32\chromedriver")
-# browser = webdriver.Chrome('./chromedriver')
+#browser = webdriver.Chrome("D:\driver\chromedriver_win32\chromedriver")
+browser = webdriver.Chrome('./chromedriver/chromedriver.exe')
 
 
 browser.get("https://zh.surveymonkey.com/r/EmployeeHealthDeclarationForm")
