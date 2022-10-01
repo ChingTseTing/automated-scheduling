@@ -1,10 +1,10 @@
 from selenium import webdriver
-
-
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 import chromedriver_autoinstaller
-
+from pyvirtualdisplay import Display
+display = Display(visible=0, size=(800, 800))  
+display.start()
 
 chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
                                       # and if it doesn't exist, download it automatically,
@@ -31,16 +31,11 @@ for option in options:
     chrome_options.add_argument(option)
 
     
-browser = webdriver.Chrome(options = chrome_options)
-
-
-
-
-
+driver = webdriver.Chrome(options = chrome_options)
 #browser = webdriver.Chrome('./chromedriver/chromedriver.exe')
 
 
-browser.get("https://zh.surveymonkey.com/r/EmployeeHealthDeclarationForm")
+driver.get("https://zh.surveymonkey.com/r/EmployeeHealthDeclarationForm")
 email = browser.find_element("id", "66722352")
 email.send_keys('138516')
 
