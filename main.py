@@ -31,11 +31,11 @@ for option in options:
     chrome_options.add_argument(option)
 
     
-driver = webdriver.Chrome(options = chrome_options)
+browser = webdriver.Chrome(options = chrome_options)
 #browser = webdriver.Chrome('./chromedriver/chromedriver.exe')
 
 
-driver.get("https://zh.surveymonkey.com/r/EmployeeHealthDeclarationForm")
+browser.get("https://zh.surveymonkey.com/r/EmployeeHealthDeclarationForm")
 email = browser.find_element("id", "66722352")
 email.send_keys('138516')
 
