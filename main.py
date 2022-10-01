@@ -3,10 +3,7 @@ from selenium import webdriver
 
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
-
-
 import chromedriver_autoinstaller
-chromedriver_autoinstaller.install()
 
 
 chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
