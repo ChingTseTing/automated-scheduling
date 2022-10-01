@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
+  
+  schedule:
+    - cron: '0 21 * * *'
 jobs:
   scrape:
     runs-on: ubuntu-latest
