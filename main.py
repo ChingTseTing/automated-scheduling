@@ -1,11 +1,46 @@
 from selenium import webdriver
 
-#from webdriver_manager.chrome import ChromeDriverManager # <--- add this
+
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 
 
-#driverpath = "./chromedriver.exe"
-#browser = webdriver.Chrome("D:\driver\chromedriver_win32\chromedriver")
-browser = webdriver.Chrome('./chromedriver/chromedriver.exe')
+import chromedriver_autoinstaller
+chromedriver_autoinstaller.install()
+
+
+chromedriver_autoinstaller.install()  # Check if the current version of chromedriver exists
+                                      # and if it doesn't exist, download it automatically,
+                                      # then add chromedriver to path
+
+chrome_options = webdriver.ChromeOptions()    
+# Add your options as needed    
+options = [
+  # Define window size here
+   "--window-size=1200,1200",
+    "--ignore-certificate-errors"
+ 
+    #"--headless",
+    #"--disable-gpu",
+    #"--window-size=1920,1200",
+    #"--ignore-certificate-errors",
+    #"--disable-extensions",
+    #"--no-sandbox",
+    #"--disable-dev-shm-usage",
+    #'--remote-debugging-port=9222'
+]
+
+for option in options:
+    chrome_options.add_argument(option)
+
+    
+browser = webdriver.Chrome(options = chrome_options)
+
+
+
+
+
+#browser = webdriver.Chrome('./chromedriver/chromedriver.exe')
 
 
 browser.get("https://zh.surveymonkey.com/r/EmployeeHealthDeclarationForm")
