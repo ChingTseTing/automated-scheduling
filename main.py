@@ -36,33 +36,37 @@ for option in options:
 browser = webdriver.Chrome(options = chrome_options)
 #browser = webdriver.Chrome('./chromedriver/chromedriver.exe')
 
-
 browser.get("https://zh.surveymonkey.com/r/EmployeeHealthDeclarationForm")
-email = browser.find_element("id", "66722352")
+email = browser.find_element("xpath","//input[@class='wds-input wds-input--lg qt-input_text text']")
 email.send_keys('138516')
 
-##
-browser.find_element("id", "66722353_544681771_label").click()
-browser.find_element("id", "66722351_544681761_label").click()
-browser.find_element("xpath","//button[@type='submit']").click()
 
 ##
-browser.find_element("id", "66722354_544681783_label").click()
+browser.find_elements("xpath","//label[@class='answer-label radio-button-label no-touch touch-sensitive clearfix']")[0].click()  # 同上
+browser.find_elements("xpath","//span[@class='radio-button-label-text question-body-font-theme user-generated ']")[2].click()  # 同上
+browser.find_element("xpath","//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
+
+
+#
+browser.find_elements("xpath", "//span[@class='radio-button-label-text question-body-font-theme user-generated ']")[1].click()
+browser.find_element("xpath","//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
+
+#               
+browser.find_elements("xpath", "//span[@class='radio-button-label-text question-body-font-theme user-generated ']")[1].click()
+browser.find_element("xpath","//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
+
+#
+browser.find_elements("xpath", "//span[@class='radio-button-label-text question-body-font-theme user-generated ']")[1].click()
 browser.find_element("xpath","//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
 
 ##
-browser.find_element("id", "66722361_544681835_label").click()
-browser.find_element("xpath","//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
-##
-browser.find_element("id", "66722355_544681787_label").click()
+browser.find_elements("xpath", "//span[@class='radio-button-label-text question-body-font-theme user-generated ']")[1].click()
 browser.find_element("xpath","//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
 
-##
-browser.find_element("id", "66722366_544681859_label").click()
-browser.find_element("xpath","//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
 
 ##
-browser.find_element("id", "66722356_544681790").click()
+
+browser.find_elements("xpath", "//span[@class='radio-button-label-text question-body-font-theme user-generated ']")[0].click()
 browser.find_element("xpath","//button[@class='btn small done-button survey-page-button user-generated notranslate']").click()
 
 
@@ -76,6 +80,7 @@ browser.find_element("id", "87960820_688357202_label").click()
 browser.find_element("id", "87960821_688357189_label").click()
 
 email2= browser.find_element("id", "87960822_688357192_DMY")
-email2.send_keys('09/13/2022')
+
+email2.send_keys(datetime.now().strftime("%m/%d/%Y"))  
 browser.find_element("id", "87960814_688357154_label").click()
 browser.find_element("xpath","//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
