@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 import chromedriver_autoinstaller
-
+from datetime import datetime
 
 from pyvirtualdisplay import Display
 display = Display(visible=0, size=(800, 800))  
