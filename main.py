@@ -72,15 +72,17 @@ browser.find_element("xpath","//button[@class='btn small done-button survey-page
 
 #####
 browser.get("https://zh.surveymonkey.com/r/EmployeeHealthCheck")
-
-browser.find_element("id", "87960815_688357155_label").click()
-email = browser.find_element("id", "87960813")
+browser.find_elements("xpath", "//span[@class='radio-button-label-text question-body-font-theme user-generated ']")[0].click()
+email = browser.find_elements("xpath", "//input[@class='wds-input wds-input--lg qt-input_text text']")[0]
 email.send_keys('138516')
-browser.find_element("id", "87960820_688357202_label").click()
-browser.find_element("id", "87960821_688357189_label").click()
 
-email2= browser.find_element("id", "87960822_688357192_DMY")
+         
+browser.find_elements("xpath", "//span[@class='radio-button-label-text question-body-font-theme user-generated ']")[4].click()
 
+browser.find_elements("xpath", "//span[@class='radio-button-label-text question-body-font-theme user-generated ']")[8].click()
+
+email2= browser.find_element("xpath", "//input[@class='form-control text date--picker date-validation']")
 email2.send_keys(datetime.now().strftime("%m/%d/%Y"))  
-browser.find_element("id", "87960814_688357154_label").click()
+
+browser.find_elements("xpath", "//span[@class='radio-button-label-text question-body-font-theme user-generated ']")[9].click()
 browser.find_element("xpath","//button[@class='btn small next-button survey-page-button user-generated notranslate']").click()
